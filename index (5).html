@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kennisbank</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7fa;color:#333}
+header{background:#1f4e79;color:#fff;padding:30px;text-align:center}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:15px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+nav button{padding:10px 16px;border:none;border-radius:6px;background:#e3eaf2;cursor:pointer}
+nav button:hover{background:#1f4e79;color:#fff}
+.content{max-width:1000px;margin:30px auto;padding:20px}
+.tab{display:none}.active{display:block}
+.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.08);margin-bottom:18px}
+input,textarea{width:100%;padding:10px;margin:8px 0 16px;box-sizing:border-box}
+.submit{background:#1f4e79;color:#fff;border:none;padding:12px 18px;border-radius:6px}
+footer{text-align:center;padding:20px;color:#777}
+</style>
+</head>
+<body>
+<header><h1>Kennisbank</h1><p>Relevante initiatieven, raamwerken en meetinstrumenten</p></header>
+<nav>
+<button onclick="openTab('home')">Uitleg</button>
+<button onclick="openTab('meet')">Meetinstrumenten</button>
+<button onclick="openTab('raam')">Raamwerken</button>
+<button onclick="openTab('init')">Initiatieven</button>
+<button onclick="openTab('overig')">Overig</button>
+<button onclick="openTab('suggestie')">Suggesties</button>
+</nav>
+<div class="content">
+
+<section id="home" class="tab active">
+<div class="card"><h2>Welkom</h2><p>Deze kennisbank bundelt relevante meetinstrumenten, raamwerken, initiatieven en overige bronnen rondom digitale autonomie.</p></div>
+</section>
+
+<section id="meet" class="tab">
+<h2>Meetinstrumenten</h2>
+<div class="card"><h3>DAAF</h3><p>AI-beoordelingsinstrument.</p></div>
+<div class="card"><h3>DAIX</h3><p>Framework voor AI-evaluatie.</p></div>
+<div class="card"><h3>SCOPE Sovereignty Matrix</h3><p>Volwassenheidsniveaus L0–L4 voor digitale autonomie.</p></div>
+<div class="card"><h3>AI Readiness Assessment</h3><p>Meet de gereedheid van organisaties voor AI.</p></div>
+<div class="card"><h3>AI Impact Assessment</h3><p>Ondersteunt impactanalyse van AI-toepassingen.</p></div>
+</section>
+
+<section id="raam" class="tab">
+<h2>Raamwerken</h2>
+<div class="card"><h3>ISO/IEC 42001</h3><p>Managementsysteem voor AI.</p></div>
+<div class="card"><h3>OECD AI Principles</h3><p>Internationale AI-principes.</p></div>
+<div class="card"><h3>NORA</h3><p>Nederlandse Overheid Referentie Architectuur.</p></div>
+<div class="card"><h3>BIO</h3><p>Baseline Informatiebeveiliging Overheid.</p></div>
+</section>
+
+<section id="init" class="tab">
+<h2>Initiatieven</h2>
+<div class="card"><h3>DACC</h3><p>Digitaal Autonomie Competentie Centrum.</p></div>
+<div class="card"><h3>Nederlandse Digitaliseringsstrategie</h3><p>Landelijk programma voor digitale samenwerking.</p></div>
+<div class="card"><h3>Publieke AI Coalitie</h3><p>Samenwerking rond verantwoorde AI.</p></div>
+</section>
+
+<section id="overig" class="tab">
+<h2>Overig</h2>
+<div class="card"><h3>Bronnen</h3><p>Rapporten, publicaties en aanvullende documentatie.</p></div>
+</section>
+
+<section id="suggestie" class="tab">
+<h2>Suggesties</h2>
+<div class="card">
+<form action="mailto:lai@uu.nl" method="post" enctype="text/plain">
+<label>Naam</label><input name="Naam">
+<label>E-mailadres</label><input type="email" name="Email">
+<label>Suggestie</label><textarea name="Suggestie"></textarea>
+<button class="submit" type="submit">Versturen</button>
+</form>
+</div>
+</section>
+
+</div>
+<footer>© Kennisbank</footer>
+<script>
+function openTab(id){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+</body></html>
